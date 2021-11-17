@@ -1,9 +1,11 @@
 /* rgb(168, 176, 223) */
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body{
@@ -12,6 +14,7 @@ body{
 
 nav{
   position:fixed;
+  /* background-color: rgb(168, 176, 223); */
   width:100%;
   z-index:100;
   padding:10px;
@@ -29,58 +32,73 @@ nav ul{
     list-style-type: none;
 }
 
+.new-note{
+    margin: auto 6px;
+}
+
+.trash-btn{
+    margin: auto 6px;
+}
+
+.note-name{
+    font-size: 15px;
+    padding-left:6px;
+    border: 1px solid rgb(168, 176, 223);;
+    border-radius: 5px;
+    width:65%;
+}
+
+.notes-list{
+    font-family: 'Poppins', sans-serif;
+    margin: auto 12%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-note{
+    justify-content: center;
+    padding-top:10px;
+    display: flex;
+    width:20%;
+    position:fixed;
+    top:48;
+}
+
 #side-drop{
     position: fixed;
     height: 100%;
     width: 20%;
     overflow: auto;
-    top: 48;
+    padding-bottom: 0;
+    top: 100;
+}
+
+.note-item{
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.note-item:hover, .fa:hover{
+    cursor: pointer;
+}
+
+.note{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#drops ul{
+    list-style-type: none;
 }
 
 #drops{
-    /* padding-top: 60px; */
+    /* background-color: rgb(168, 176, 223); */
     height: 100%;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-.add-note{
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.new-note{
-    margin-left: 6px;
-    font-size: 1.5rem;
-    padding-bottom: 2px;
-}
-
-.add-note input{
-    font-size: 15px;
-    border: 1px solid rgba(119, 119, 119, 0.089);
-    font-family: inherit;
-    width: 75%;
-    border-radius: 5px;
-}
-
-.notes-list{
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-}
-
-.notes-list a{
-    font-size: 15px;
-    font-family: inherit;
-    color: inherit;
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid rgba(119, 119, 119, 0.089);
-    text-decoration: none;
-    padding: 2px 1px 1px 16px;
 }
 
 #modal-container{
@@ -123,6 +141,7 @@ nav ul{
 .done{
     display: block;
     font-family: inherit;
+    font-weight: inherit;
     padding: 4px;
     margin: 8px auto;
     border: 1px solid rgb(168, 176, 223);

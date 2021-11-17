@@ -1,10 +1,23 @@
 const section = document.getElementById('container');
 const modalContainer = document.getElementById('modal-container');
 
-
 const notesList = document.querySelector('.notes-list');
+
+notesList.addEventListener('click', handleNote);
+
+function handleNote(event){
+    if(event.target.classList.contains('trash-btn')){
+        const library = JSON.parse(localStorage.getItem('library'));
+        event.target.parentElement.remove();
+        library.notes = library.notes.filter((note) => note.key!== event.target.parentElement.firstChild.innerHTML);
+        localStorage.setItem("library", JSON.stringify(library));
+    }
+
+}
+
+
 const newNote = document.querySelector('.new-note');
-const noteName = document.querySelector('.note');
+const noteName = document.querySelector('.note-name');
 
 const welcomeButton = document.querySelector('.done');
 document.addEventListener('DOMContentLoaded', app);
@@ -23,12 +36,20 @@ function addNote(event){
         }
         library.notes.push(note);
         localStorage.setItem("library", JSON.stringify(library));
-        const newNote = document.createElement('a');
-        newNote.appendChild(document.createTextNode(note["key"]));
-        newNote.setAttribute("id",note["key"]);
-        newNote.setAttribute("class","note-info");
-        newNote.setAttribute("href","#");
-        notesList.append(newNote);
+        const noteDiv = document.createElement('div');
+        noteDiv.classList.add('note');
+        const newNote = document.createElement('li');
+        newNote.innerText = note["key"];
+        newNote.classList.add('note-item');
+        noteDiv.appendChild(newNote);
+        const trash = document.createElement('i');
+        trash.classList.add("trash-btn");
+        trash.classList.add("fa");
+        trash.classList.add("fa-trash");
+        trash.classList.add("fa-2x");
+        noteDiv.appendChild(trash);
+        notesList.appendChild(noteDiv);
+        noteName.value = "";
     }
 }
 
@@ -63,12 +84,21 @@ function app(){
         const library = JSON.parse(localStorage.getItem('library'));
         document.getElementById("name").innerHTML = library["userName"];
         library["notes"].forEach(element => {
-            const newNote = document.createElement('a');
-            newNote.appendChild(document.createTextNode(element.key));
-            newNote.setAttribute("id",element.key);
-            newNote.setAttribute("href","#");
-            notesList.append(newNote);
+            const noteDiv = document.createElement('div');
+            noteDiv.classList.add('note');
+            const newNote = document.createElement('li');
+            newNote.innerText = element.key;
+            newNote.classList.add('note-item');
+            noteDiv.appendChild(newNote);
+            const trash = document.createElement('i');
+            trash.classList.add("trash-btn");
+            trash.classList.add("fa");
+            trash.classList.add("fa-trash");
+            trash.classList.add("fa-2x");
+            noteDiv.appendChild(trash);
+            notesList.appendChild(noteDiv);
         });
+
     }
 }
 
