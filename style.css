@@ -94,7 +94,6 @@ nav ul{
     height: 100%;
     width: 20%;
     overflow: auto;
-    padding-bottom: 0;
     top: 100;
 }
 
@@ -205,7 +204,7 @@ nav ul{
 .done, .add{
     display: block;
     font-family: inherit;
-    font-weight: inherit;
+    font-weight: 500;
     padding: 4px;
     margin: 8px auto;
     border: 1px solid rgb(168, 176, 223);
@@ -241,4 +240,17 @@ nav ul{
 .note-head{
     display: flex;
     justify-content: space-between;
+}
+
+footer{
+    width:100%;
+    position: fixed;
+    bottom:0;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+
+.fa{
+    color:black;
 }
