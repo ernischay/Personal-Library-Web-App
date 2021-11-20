@@ -10,16 +10,36 @@
         <li><i class="fa fa-book fa-1x"></i>&nbsp;Library</li>
         <li class="welcome">Welcome,&nbsp;<span id="name"></span></li>
         </ul>
+        <div class="add-note">
+            <input class="note-name" autofocus type="text"/>
+            <i class="fa fa-plus fa-2x new-note"></i>
+        </div>
     </nav>
-    <div class="add-note">
-        <input class="note-name" autofocus type="text"/>
-        <i class="fa fa-plus fa-2x new-note"></i>
-    </div>
     <div id="side-drop">
         <div id="drops">
             <ul class="notes-list">
 
             </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div id="note-info">
+            <div id="heading"><span id="item"></i></span><i class="fa fa-plus fa-x new-item"></i></div>
+            <div id="note-info-container">
+                <form id="form-style">
+                    <input class="note-info-name" type="text"/>
+                    <textarea class="note-info-content"></textarea>
+                    <button type="submit" class="add">Add</button>
+                </form>
+            </div>
+            <ol class="list">
+                
+            </ol>
+            <div id="note-display-container">
+                <div class="note-head"><h2 class="note-heading"></h2><i class="fa fa-times fa-2x close"></i></div>
+                
+                <p class="note-content"></p>
+            </div>
         </div>
     </div>
     

@@ -36,7 +36,7 @@ nav ul{
     margin: auto 6px;
 }
 
-.trash-btn{
+.trash-btn, .new-item{
     margin: auto 6px;
 }
 
@@ -48,11 +48,23 @@ nav ul{
     width:65%;
 }
 
-.notes-list{
+.list{
     font-family: 'Poppins', sans-serif;
-    margin: auto 12%;
+    margin: auto 5%;
     display: flex;
     flex-direction: column;
+}
+
+.notes-list{
+    font-family: 'Poppins', sans-serif;
+    margin: auto 14%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list{
+    font-family: 'Poppins', sans-serif;
+    display: none;
 }
 
 .add-note{
@@ -64,6 +76,19 @@ nav ul{
     top:48;
 }
 
+#main{
+    margin-left: auto;
+    margin-right: 0;
+    position: fixed;
+    left: 20%;
+    width:80%;
+    border-radius: 5px;
+    height: 100%;
+    top:100;
+    background-color: lawngreen;
+    overflow: auto;
+}
+
 #side-drop{
     position: fixed;
     height: 100%;
@@ -73,12 +98,21 @@ nav ul{
     top: 100;
 }
 
-.note-item{
+#drops{
+    /* background-color: rgb(168, 176, 223); */
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.note-item, .new-item, #item{
     font-family: inherit;
     font-size: 15px;
 }
 
-.note-item:hover, .fa:hover{
+.note-item:hover, .fa:hover, .note-title:hover{
     cursor: pointer;
 }
 
@@ -93,12 +127,42 @@ nav ul{
     list-style-type: none;
 }
 
-#drops{
-    /* background-color: rgb(168, 176, 223); */
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+#heading{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#note-info-container{
+    display: none;
+}
+
+.note-info-content{
+    height: 50%;
+}
+
+
+.note-info-name, .note-info-content{
+    margin: 6px auto;
+    font-size: 15px;
+    padding: 6px;
+    border: 1px solid rgb(168, 176, 223);;
+    border-radius: 5px;
+    width:65%;
+}
+
+#form-style{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    width: 75%;
+    margin: 5% auto;
 }
 
 #modal-container{
@@ -132,13 +196,13 @@ nav ul{
 }
 
 .user{
-    padding: 4px;
+    padding: 6px;
     font-family: inherit;
     border-radius: 2px;
     border: 1px solid rgb(168, 176, 223);
 }
 
-.done{
+.done, .add{
     display: block;
     font-family: inherit;
     font-weight: inherit;
@@ -149,8 +213,32 @@ nav ul{
     box-shadow: 2px 2px 2px rgb(168, 176, 223);
 }
 
-.done:active{
+.done:active, .add:active{
     box-shadow: 0 0 0 rgb(168, 176, 223);
     transform: translate(2px,2px);
 }
 
+#note-display-container{
+    display: none;
+    height: 75%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    width: 75%;
+    margin: 2% auto;
+}
+
+.note-heading{
+    font-size: 24px;
+    margin-bottom: 2%;
+    border-bottom: 1px solid #111;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+}
+
+.note-head{
+    display: flex;
+    justify-content: space-between;
+}
